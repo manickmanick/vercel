@@ -6,7 +6,7 @@ A modern and responsive creative portfolio built using [v0.dev](https://v0.dev) 
 
 ## Live Demo
 
-Check out the live demo: [https://v0-creative-portfolio-o7.vercel.app/](https://v0-creative-portfolio-o7.vercel.app/)
+Check out the live demo: [https://manickaperumal.vercel.app/](https://manickaperumal.vercel.app/)
 
 ## Features
 
@@ -73,7 +73,3 @@ Vercel will automatically deploy your portfolio and provide you with a live URL.
 ## Contributing
 
 Contributions are welcome! If you have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is open source and available under the [MIT License](./LICENSE).
