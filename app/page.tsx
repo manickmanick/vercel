@@ -216,7 +216,7 @@ export default function Portfolio() {
               title="Distributed Code Execution Engine (Similar to Leetcode App)"
               description="A collaborative task management application with real-time updates."
               tags={["Node JS", "Docker", "MongoDB"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/dashboard.jpg?height=400&width=600"
               demoUrl=""
               repoUrl="https://github.com/manickmanick/Leetcode-Backend-Nodejs"
             />
@@ -224,7 +224,7 @@ export default function Portfolio() {
               title="Portfolio Website"
               description="This portfolio website built with Next.js and Tailwind CSS."
               tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
-              image="/placeholder.svg?height=400&width=600"
+              image="/portfolio-screenshot.png?height=400&width=600"
               demoUrl="https://example.com"
               repoUrl="https://github.com/manickmanick/vercel"
             />
