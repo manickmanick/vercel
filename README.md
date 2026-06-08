@@ -1,8 +1,3 @@
-# Creative Portfolio
-
-A modern and responsive creative portfolio built using [v0.dev](https://v0.dev) by Vercel.
-
-![Creative Portfolio Preview](./preview.png)
 
 ## Live Demo
 
