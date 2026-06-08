@@ -119,9 +119,9 @@ export default function Portfolio() {
               <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl opacity-70"></div>
               <div className="relative aspect-square rounded-xl overflow-hidden border border-zinc-800">
                 <img
-                  src="/placeholder.svg?height=600&width=600"
+                  src="/manick-portfolio.jpg?height=600&width=600"
                   alt="manickaperumal"
-                  className="w-full h-full object-cover"
+                  className="w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-6">
@@ -166,9 +166,9 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                <div className="mt-8">
+                {/* <div className="mt-8">
                   <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">Download Resume</Button>
-                </div>
+                </div> */}
               </GlassmorphicCard>
             </div>
           </div>
@@ -213,20 +213,12 @@ export default function Portfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             <ProjectCard
-              title="E-commerce Platform"
-              description="A full-stack e-commerce platform built with Next.js, Stripe, and Prisma."
-              tags={["Next.js", "TypeScript", "Prisma", "Stripe"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
-            />
-            <ProjectCard
-              title="Task Management App"
+              title="Distributed Code Execution Engine (Similar to Leetcode App)"
               description="A collaborative task management application with real-time updates."
-              tags={["React", "Firebase", "Tailwind CSS", "Redux"]}
+              tags={["Node JS", "Docker", "MongoDB"]}
               image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              demoUrl=""
+              repoUrl="https://github.com/manickmanick/Leetcode-Backend-Nodejs"
             />
             <ProjectCard
               title="Portfolio Website"
@@ -234,7 +226,7 @@ export default function Portfolio() {
               tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
               image="/placeholder.svg?height=400&width=600"
               demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              repoUrl="https://github.com/manickmanick/vercel"
             />
           </div>
         </div>
@@ -317,10 +309,6 @@ export default function Portfolio() {
       <footer className="border-t border-zinc-800 py-12">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
-            <Link href="/" className="font-bold text-xl">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Shine</span>
-              <span className="text-white">KKA</span>
-            </Link>
             <p className="text-sm text-zinc-500 mt-2">
               © {new Date().getFullYear()} All rights reserved.
             </p>
@@ -336,7 +324,7 @@ export default function Portfolio() {
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://www.linkedin.com/in/shinekyawkyawaung/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/manickaperumal-k-0463a4229/" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="icon"
@@ -346,7 +334,7 @@ export default function Portfolio() {
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>
-            <Link href="mailto:shinekyawkyawaung@gmail.com">
+            <Link href="mailto:manicm265@gmail.com">
               <Button
                 variant="ghost"
                 size="icon"

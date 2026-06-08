@@ -1,34 +1,37 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useMobile } from "@/hooks/use-mobile"
+import { motion } from "framer-motion";
+import { useMobile } from "@/hooks/use-mobile";
 
 const experiences = [
   {
     title: "Associate Product Developer",
-    company: "Lumel Technologies",
-    period: "2025(June) - 2026(Feb)",
+    company: "Lumel Technologies Pvt Ltd",
+    period: "June 2025 - Feb 2026",
+    location: "Chennai",
     description:
-      "Lead the frontend development team in building a SaaS platform. Implemented new features, improved performance, and mentored junior developers.",
+      "Developed and delivered multiple product features, owned the end-to-end development of a new module, and mentored junior developers to support team growth and code quality.",
   },
   {
     title: "Software Developer",
     company: "Megsoft Business Solutions Pvt Ltd.",
-    period: "2023(Sep) - 2024(Dec)",
+    period: "Sep 2023 - Dec 2024",
     description:
-      "Developed responsive web applications using React and TypeScript. Collaborated with designers and backend engineers to deliver high-quality products.",
+      "Developed responsive web applications using TypeScript. Collaborated with designers and Frontend developers to deliver high-quality products.",
+    location: "Madurai",
   },
   {
     title: "Junior Software Engineer",
     company: "Altrosyn Technologies Pvt Ltd",
-    period: "2022(July) - 2023(July)",
+    period: "May 2022 - July 2023",
     description:
-      "Built websites and web applications for various clients. Worked with HTML, CSS, JavaScript, and WordPress.",
-  }
-]
+      "Contributed to the development of OTT streaming applications and managed Linux server infrastructure, ensuring reliable deployment and system performance.",
+    location: "Chennai",
+  },
+];
 
 export function Timeline() {
-  const isMobile = useMobile()
+  const isMobile = useMobile();
 
   return (
     <div
@@ -56,7 +59,7 @@ export function Timeline() {
               <div className="relative">
                 <h3 className="text-xl font-bold">{experience.title}</h3>
                 <div className="text-zinc-400 mb-4">
-                  {experience.company} | {experience.period}
+                  {experience.company} | {experience.period} | {experience.location}
                 </div>
                 <p className="text-zinc-300">{experience.description}</p>
               </div>
@@ -79,5 +82,5 @@ export function Timeline() {
         </div>
       ))}
     </div>
-  )
+  );
 }
