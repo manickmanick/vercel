@@ -200,9 +200,19 @@ export default function Portfolio() {
                     </div>
                   </div>
 
-                  {/* <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">Download Resume</Button>
-                </div> */}
+                  <div className="mt-8">
+                    <Button
+                      asChild
+                      className="bg-zinc-800 hover:bg-zinc-700 text-white"
+                    >
+                      <a
+                        href="/Manickaperumal-resume.pdf"
+                        download="Manickaperumal-resume.pdf"
+                      >
+                        Download Resume
+                      </a>
+                    </Button>
+                  </div>
                 </GlassmorphicCard>
               </div>
             </div>
