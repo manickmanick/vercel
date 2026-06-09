@@ -1,35 +1,44 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Send } from "lucide-react"
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { Send } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { saveSubmission } from "@/app/actions/action";
 
 export function ContactForm() {
-  const { toast } = useToast()
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const handleFormAction = async (formData: FormData) => {
+    console.log("Form Submissions Data:", Object.fromEntries(formData));
+    setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const result = await saveSubmission(formData);
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    })
+    setIsSubmitting(false);
 
-    setIsSubmitting(false)
-    e.currentTarget.reset()
-  }
+    if (result.success) {
+      toast({
+        title: "Success!",
+        description: "Your message has been saved straight to Vercel Postgres.",
+      });
+      formRef.current?.reset();
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: result.error || "Something went wrong.",
+      });
+    }
+  };
 
   return (
     <motion.div
@@ -44,12 +53,13 @@ export function ContactForm() {
         <div className="relative">
           <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form ref={formRef} action={handleFormAction} className="space-y-6">
             <div className="space-y-2">
               <Input
                 placeholder="Your Name"
                 required
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                name="name"
               />
             </div>
             <div className="space-y-2">
@@ -58,6 +68,7 @@ export function ContactForm() {
                 placeholder="Your Email"
                 required
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                name="email"
               />
             </div>
             <div className="space-y-2">
@@ -65,6 +76,7 @@ export function ContactForm() {
                 placeholder="Subject"
                 required
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                name="subject"
               />
             </div>
             <div className="space-y-2">
@@ -73,6 +85,7 @@ export function ContactForm() {
                 rows={5}
                 required
                 className="bg-zinc-900/50 border-zinc-700 focus:border-purple-500 focus:ring-purple-500/20"
+                name="message"
               />
             </div>
             <Button
@@ -92,5 +105,5 @@ export function ContactForm() {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
