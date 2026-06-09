@@ -1,22 +1,25 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next";
+import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
-  title: 'Manick Portfolio',
-  description: 'Created with next JS',
-  generator: 'v0.dev',
-}
+  title: "Manick Portfolio",
+  description: "Created with next JS",
+  generator: "v0.dev",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
-      <Analytics />
+      <body>
+        {children}
+
+        <Analytics />
+      </body>
     </html>
-  )
+  );
 }
